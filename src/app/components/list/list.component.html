@@ -11,8 +11,19 @@
   />
 </div>
 <hr />
+<div *ngIf="allTags.length != 0">
+  <span *ngFor="let tag of allTags" class="badge badge-primary pl-3 pr-3 m-1">{{
+    tag
+  }}</span>
+</div>
+<hr />
 <div>
   <div *ngFor="let item of items" class="alert alert-primary">
     {{ item.text }}
+    <span
+      *ngFor="let tag of item.tags"
+      class="badge badge-secondary pl-3 pr-3 m-1"
+      >{{ tag }}</span
+    >
   </div>
 </div>
