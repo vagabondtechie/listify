@@ -1,1 +1,18 @@
-<p>list works!</p>
+<div>
+  <input
+    type="text"
+    #item
+    class="form-control"
+    placeholder="Add an item and press Enter"
+    required
+    minlength="5"
+    maxlength="200"
+    (keydown.enter)="addNewItem(item)"
+  />
+</div>
+<hr />
+<div>
+  <div *ngFor="let item of items" class="alert alert-primary">
+    {{ item.text }}
+  </div>
+</div>
